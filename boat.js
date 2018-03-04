@@ -9,7 +9,7 @@ const client = new class Client extends Discord.Client {
 
     this.events   = new events(this)
     this.commands = new Map();
-    this.osu      = new osu.Api('7520b4755cfd7161b3da85be693bea51e49ba412', {
+    this.osu      = new osu.Api(require('./config.json').osu, {
       // baseUrl: sets the base api url (default: https://osu.ppy.sh/api)
       notFoundAsError: false, // Reject on not found instead of returning nothing. (default: true)
       completeScores: false // When fetching scores also return the beatmap (default: false)
