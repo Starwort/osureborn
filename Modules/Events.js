@@ -11,12 +11,12 @@ module.exports = class Events {
     ready() {
         this.log('Ready!');
         this.client.user.setGame(`0x0.party`);
-        const commands = fs.readdirSync(`./Commands/`);
+        const commands = fs.readdirSync(`./commands/`);
         for (const command in commands) {
 
-            const mod = new(require(`../Commands/${commands[command]}`))(this.client);
+            const mod = new(require(`../commands/${commands[command]}`))(this.client);
             this.log(`Loaded ${mod.name}.`, "cmd")
-            this.client.commands.set(mod.name, require(`../Commands/${commands[command]}`))
+            this.client.commands.set(mod.name, require(`../commands/${commands[command]}`))
         }
     }
 

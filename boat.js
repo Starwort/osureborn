@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const chalk  = require('chalk')
-const events = require('./Modules/Events.js');
+const events = require('./modules/Events.js');
 const osu = require('node-osu')
 
 const client = new class Client extends Discord.Client {
