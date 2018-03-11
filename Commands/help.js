@@ -13,13 +13,13 @@ module.exports = class help {
   async run(message, args) {
     let final = "";
     this.client.commands.forEach(value => {
-      final += `\`0${this.pad(new value().name, 10)}\`: ${new value().info}\n`
+      final += `\`osu!${this.pad(new value().name, 10)}\`: ${new value().info}\n`
     })
 
     message.channel.sendEmbed({
       description: final,
-      color: 0xFFFFFF,
-      title: `0x0 - Help`
+      color: 0xF26197,
+      title: `osu!bot - Help`
     })
   }
 }

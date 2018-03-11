@@ -22,6 +22,12 @@ const client = new class Client extends Discord.Client {
     this.on('message', message => {
       this.events.message(message);
     })
+    this.on('guildCreate', guild => {
+      this.events.guildCreate(guild);
+    })
+    this.on('guildDelete', guild => {
+      this.events.guildDelete(guild);
+    })
     this.on('error', error => {
       console.error(error);
     })
