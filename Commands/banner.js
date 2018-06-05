@@ -22,7 +22,7 @@ module.exports = class Banner {
       } else { //std=0, taiko=1, ctb=2, mania=3
         //request arg &mode={x}
         var arglist = args.split(" ");
-        arglist[0] = arglist[0].lower()
+        arglist[0] = arglist[0].toLowerCase()
         var mode = 4;
         if (arglist[0] == "std" || arglist[0] == "standard" || arglist[0] == "osu!std" || arglist[0] == "osu!standard"){
           mode = 0;
@@ -34,7 +34,7 @@ module.exports = class Banner {
           mode = 3;
         }
         if (mode != 4){
-          args = " ".join(arglist.slice(1))
+          args = arglist.slice(1).join(" ")
         } else {
           mode = 0;
         }
